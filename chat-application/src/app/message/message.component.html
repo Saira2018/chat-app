@@ -1,5 +1,5 @@
 <form>
-  <div id="message"><input [(ngModel)]="messageContent" name="messageSent" type="text" (keyup.enter)="handleClick()" /></div>
+  <div id="message"><input [(ngModel)]="messageContent" name="messageSent" type="text" (keyup.enter)="handleEnter()" /></div>
 </form>
 <div id="send-btn">
     <input type="submit" value="submit" (click)="sendMessage()">

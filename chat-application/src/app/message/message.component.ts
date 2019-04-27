@@ -12,16 +12,17 @@ export class MessageComponent implements OnInit {
   ngOnInit() {
   }
 
-  messageContent = 'write your message here';
+  messageContent = '';
 
   sendMessage() {
     //sends message to database
     console.log('button clicked: message sent = ', this.messageContent);
+    this.messageContent = '';
   }
 
 
 
-  handleClick(){
-    console.log(this.messageContent);
+  handleEnter(){
+    console.log("Enter key pressed: message sent = ", this.messageContent);
   }
 }
