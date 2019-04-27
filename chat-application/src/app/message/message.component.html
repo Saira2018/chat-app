@@ -1,2 +1,6 @@
-<div id="message">Message here</div>
-<div id="send-btn"><button>Send</button></div>
+<form>
+  <div id="message"><input [(ngModel)]="messageContent" name="messageSent" type="text" (keyup.enter)="handleClick()" /></div>
+</form>
+<div id="send-btn">
+    <input type="submit" value="submit" (click)="sendMessage()">
+</div>
