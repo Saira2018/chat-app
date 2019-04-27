@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+body, html {
+    padding: 0;
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  #container {
+    height: 100vh;
+  }
+  
+  #left-panel {
+    width: 20%;
+    float: left; 
+  }
+  
+  #right-panel {
+    width: 80%;
+    float: left;
+  }
+  #users {
+    height: 100vh;
+    border: 0.01rem solid black; 
+    position: relative;
+    padding: 2rem;
+    box-sizing: border-box;
+
+  }
+
+  #users > h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      text-decoration: underline;
+  }
+
+  #users > ul {
+      padding-top: 2rem;
+      padding-left: 2rem;
+      font-size: 1rem;
+  }
+  
+  #chat-window {
+    height: 90vh;
+  }
+
+.chat-content {
+    border: 0.01rem solid black; 
+    position: relative;
+    padding: 2rem;
+    height: 100%;
+    box-sizing: border-box;
+}
+  
+  
+  #message {
+    border: 0.01rem solid black; 
+    position: relative;
+    padding: 2rem;
+    box-sizing: border-box;
+    height: 10vh;
+    float: left;
+    width: 90%;
+  }
+  
+  #send-btn {
+    height: 10vh;
+    float: right;
+    width: 10%;
+    position: relative;
+  }
+
+  button {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+    padding: 1rem 3.5rem;
+    top: 25%;
+    left: 25%;
+    position: relative;
+    transform: translateX(-25%);
+  }
