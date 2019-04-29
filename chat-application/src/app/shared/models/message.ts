@@ -1,7 +1,8 @@
 import { User } from './user';
 
 export class Message {
-    user: User;
+    user: string;
+    //user: User;
     text: string;
     
     constructor(user, text){

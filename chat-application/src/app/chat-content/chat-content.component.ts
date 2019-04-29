@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from '../shared/models/message';
 import { User } from '../shared/models/user';
+import { MOCKMESSAGES } from '../core/mocks/mock-messages';
 
 @Component({
   selector: 'app-chat-content',
@@ -10,23 +11,27 @@ import { User } from '../shared/models/user';
 
 export class ChatContentComponent implements OnInit {
 
-  userSaira: any;
-  userSelf: any; 
+  mockData = MOCKMESSAGES;
 
-  messages: Message [];
+  // userSaira: any;
+  // userSelf: any; 
+
+  // messages: Message [];
+
+
 
   constructor() {
 
-    const userSaira = new User('Saira C');
-    const userSelf = new User('You');
+    // const userSaira = new User('Saira C');
+    // const userSelf = new User('You');
 
-     this.messages = [ 
-      new Message( userSaira, 'Hey there!'),
-      new Message( userSaira, 'How is everybody doing??'),
-      new Message( userSaira, 'So glad this chat is up and running!'),
-      new Message( userSelf, 'I know, me too'),
+    //  this.messages = [ 
+    //   new Message( userSaira, 'Hey there!'),
+    //   new Message( userSaira, 'How is everybody doing??'),
+    //   new Message( userSaira, 'So glad this chat is up and running!'),
+    //   new Message( userSelf, 'I know, me too'),
 
-    ];
+    // ];
    }
 
   ngOnInit() {
