@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Message } from '../shared/models/message';
-import { MOCKMESSAGES } from '../core/mocks/mock-messages';
+import { Message } from '../../shared/models/message';
+import { MOCKMESSAGES } from '../mocks/mock-messages';
 import { Observable, of } from 'rxjs';
 
 
