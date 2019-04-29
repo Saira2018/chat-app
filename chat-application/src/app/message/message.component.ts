@@ -24,5 +24,6 @@ export class MessageComponent implements OnInit {
 
   handleEnter(){
     console.log("Enter key pressed: message sent = ", this.messageContent);
+    this.messageContent = '';
   }
 }

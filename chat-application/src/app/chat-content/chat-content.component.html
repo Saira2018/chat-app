@@ -1,8 +1,5 @@
 <div class="chat-content">
-  <div *ngFor="let visitor of userSaira">
-    <p *ngFor="let messageText of visitor.messages"> {{ visitor.name }} : {{ messageText.text }}  </p>
-  </div>
-  <div *ngFor="let you of userSelf">
-    <p *ngFor="let messageText of you.messages"> {{ you.name }} : {{ messageText.text }}  </p>
+  <div *ngFor="let message of messages">
+    <p > {{ message.user.name }} : {{ message.text }}  </p>
   </div>
 </div>
