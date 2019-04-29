@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from '../shared/models/message';
 import { User } from '../shared/models/user';
-import { MOCKMESSAGES } from '../core/mocks/mock-messages';
+import { MessageService } from '../core/message.service';
 
 @Component({
   selector: 'app-chat-content',
@@ -11,7 +11,9 @@ import { MOCKMESSAGES } from '../core/mocks/mock-messages';
 
 export class ChatContentComponent implements OnInit {
 
-  mockData = MOCKMESSAGES;
+  mockData: Message [];
+
+ // mockData = MOCKMESSAGES;
 
   // userSaira: any;
   // userSelf: any; 
@@ -20,8 +22,15 @@ export class ChatContentComponent implements OnInit {
 
 
 
-  constructor() {
+  constructor(private _messageService: MessageService) {}
 
+  getMessages(): void {
+    // this.mockData = this._messageService.getMessages();
+    this._messageService.getMessages()
+      .subscribe(mockData => this.mockData = mockData);
+      
+    
+  }
     // const userSaira = new User('Saira C');
     // const userSelf = new User('You');
 
@@ -32,9 +41,8 @@ export class ChatContentComponent implements OnInit {
     //   new Message( userSelf, 'I know, me too'),
 
     // ];
-   }
 
   ngOnInit() {
-
+    this.getMessages();
   }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from '../shared/models/message';
+import { User } from '../shared/models/user';
+import { MessageService } from '../core/message.service';
 
 @Component({
   selector: 'app-message',
@@ -6,24 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message.component.scss']
 })
 export class MessageComponent implements OnInit {
+  private newMessage;
+  private userName: string = 'You';
+  private text;
 
-  constructor() { }
+  messagecontent: string;
+
+  constructor(private _messageService: MessageService) {}
 
   ngOnInit() {
   }
 
-  messageContent = '';
-
-  sendMessage() {
-    //sends message to database
-    console.log('button clicked: message sent = ', this.messageContent);
-    this.messageContent = '';
-  }
-
-
-
-  handleEnter(){
-    console.log("Enter key pressed: message sent = ", this.messageContent);
-    this.messageContent = '';
+  addMessage() {
+    console.log("submitted");
+     this.newMessage = {
+     user: this.userName,
+     text: this.text
+   }
+   this._messageService.addMessage(this.newMessage);
   }
 }
