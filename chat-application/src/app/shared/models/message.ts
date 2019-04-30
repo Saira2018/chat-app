@@ -1,11 +1,11 @@
 import { User } from './user';
 
 export class Message {
-    user: string;
+    user: User;
     text: string;
     
-    constructor(user, text){
-        this.user = user;
+    constructor(username, text){
+        this.user = new User(username);
         this.text = text;
     }
 }

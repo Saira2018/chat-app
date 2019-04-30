@@ -9,11 +9,9 @@ import { MessageService } from '../core/services/message.service';
   styleUrls: ['./message.component.scss']
 })
 export class MessageComponent implements OnInit {
-  private newMessage;
   private userName: string = 'You';
   private text;
-
-  messagecontent: string;
+  message: Message
 
   constructor(private _messageService: MessageService) {}
 
@@ -21,11 +19,7 @@ export class MessageComponent implements OnInit {
   }
 
   addMessage() {
-    console.log("submitted");
-     this.newMessage = {
-     user: this.userName,
-     text: this.text
-   }
-   this._messageService.addMessage(this.newMessage);
+    const message = new Message (this.userName, this.text);
+    this._messageService.addMessage(message);
   }
 }

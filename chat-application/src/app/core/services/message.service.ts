@@ -19,6 +19,7 @@ export class MessageService {
   addMessage(newMessage) {
     console.log(newMessage);
     MOCKMESSAGES.push(newMessage);
+    
   }
 
 }
