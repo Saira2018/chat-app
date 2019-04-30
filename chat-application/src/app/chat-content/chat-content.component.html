@@ -1,10 +1,5 @@
 <div class="chat-content">
   <div *ngFor="let message of mockData">
     <p > {{ message.user | uppercase }} : {{ message.text }}  </p>
-  <!-- <div *ngFor="let message of messages">
-    <p > {{ message.user.name | uppercase }} : {{ message.text }}  </p> -->
-    <!-- <label>Name: 
-    <input [(ngModel)]="message.user.name" placeholder="name" />
-  </label> -->
   </div>
 </div>

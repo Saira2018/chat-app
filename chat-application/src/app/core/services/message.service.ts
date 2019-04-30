@@ -10,21 +10,15 @@ import { Observable, of } from 'rxjs';
 
 export class MessageService {
 
-  // getMessages(): Message [] {
-  //   return MOCKMESSAGES;
-  // }
+  constructor() { }
 
   getMessages(): Observable<Message[]> {
     return of(MOCKMESSAGES);
   }
 
-  
-
-  addMessage(newPost) {
-    //console.log(newPost);
-    console.log(newPost);
-    // this.MOCKMESSAGES.push(newPost)
+  addMessage(newMessage) {
+    console.log(newMessage);
+    MOCKMESSAGES.push(newMessage);
   }
 
-  constructor() { }
 }
