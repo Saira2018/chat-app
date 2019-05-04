@@ -1,0 +1,14 @@
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\bin\Debug\netcoreapp2.1\ChatApp.deps.json
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\bin\Debug\netcoreapp2.1\ChatApp.runtimeconfig.json
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\bin\Debug\netcoreapp2.1\ChatApp.runtimeconfig.dev.json
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\bin\Debug\netcoreapp2.1\ChatApp.dll
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\bin\Debug\netcoreapp2.1\ChatApp.pdb
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\obj\Debug\netcoreapp2.1\ChatApp.csprojAssemblyReference.cache
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\obj\Debug\netcoreapp2.1\ChatApp.csproj.CoreCompileInputs.cache
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\obj\Debug\netcoreapp2.1\ChatApp.RazorAssemblyInfo.cache
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\obj\Debug\netcoreapp2.1\ChatApp.RazorAssemblyInfo.cs
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\obj\Debug\netcoreapp2.1\ChatApp.AssemblyInfoInputs.cache
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\obj\Debug\netcoreapp2.1\ChatApp.AssemblyInfo.cs
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\obj\Debug\netcoreapp2.1\ChatApp.RazorTargetAssemblyInfo.cache
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\obj\Debug\netcoreapp2.1\ChatApp.dll
+C:\Users\saira.chaudhry\Desktop\sc\SDM\-- App 3\chat-app\chat-app\ChatApp\obj\Debug\netcoreapp2.1\ChatApp.pdb
