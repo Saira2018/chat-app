@@ -10,11 +10,11 @@ namespace ChatApp.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
+        // GET all messages : api/messages
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2", "value3" };
         }
 
         // GET api/values/5
@@ -30,16 +30,5 @@ namespace ChatApp.Controllers
         {
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
