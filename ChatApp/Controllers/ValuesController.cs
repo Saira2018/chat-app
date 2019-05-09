@@ -30,5 +30,13 @@ namespace ChatApp.Controllers
         {
         }
 
+        // test Post
+        [HttpPost]
+        [Route("JsonStringBody")]
+        public string JsonStringBody([FromBody] string content )
+        {
+            return content;
+        }
+
     }
 }
