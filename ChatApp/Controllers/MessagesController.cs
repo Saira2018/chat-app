@@ -58,6 +58,12 @@ namespace ChatApp.Controllers
 
         //Create a chat message : POST api/messages
         // post to _message variable
+        [HttpPost]
+        public ActionResult<Message> Post ([FromBody] string _userName )
+        {
+            var IncomingUserName = _userName;
+             
+        }
 
 
 
