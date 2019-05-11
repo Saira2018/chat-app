@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,7 @@ namespace ChatApp.Controllers
     [ApiController]
     public class MessagesController : ControllerBase
     {
-        private List<Message> _messages;
+        public List<Message> _messages;
 
         public MessagesController()
         {
@@ -32,6 +33,10 @@ namespace ChatApp.Controllers
                     MessageBody = "Hope all is well"
                 },
              };
+
+
+            _messages.Add( new Message { Id = 3, MessageBody = "added in controller", UserName =  "bob"} );
+
         }
 
         //Get all messages : GET api/messages
@@ -41,8 +46,7 @@ namespace ChatApp.Controllers
             return _messages;
         }
 
-
-
+ 
         [HttpGet( "{id}" )]
         public ActionResult<Message> Get( int id )
         {
@@ -55,17 +59,22 @@ namespace ChatApp.Controllers
 
         }
 
-
-        //Create a chat message : POST api/messages
-        // post to _message variable
+        // POST api/values
         [HttpPost]
-        public ActionResult<Message> Post ([FromBody] string _userName )
+        public ActionResult<Message> Post( [FromBody] Message message )
+          //public ActionResult<IEnumerable<Message>> Post( [FromBody] Message message )
         {
-            var IncomingUserName = _userName;
-             
+            var incomingUserName = message.UserName;
+
+           _messages.Add( new Message { Id = 4, MessageBody = "added in controller", UserName = incomingUserName } );
+
+           return new Message { Id = 4, UserName = incomingUserName, MessageBody = "created using postman" };
+
+          // _messages.Add( new Message { Id = 4, UserName = incomingUserName, MessageBody = "this is default from Post endpoint" } );
+  
+          //return _messages;
+
         }
-
-
 
     }
 }
