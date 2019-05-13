@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ChatApp.Models;
+using ChatApp.Services;
 
 namespace ChatApp.Controllers
 {
@@ -11,69 +12,25 @@ namespace ChatApp.Controllers
     [ApiController]
     public class MessagesController : ControllerBase
     {
-        public List<Message> _messages;
+        private IMessageService _messageService;
 
-        public MessagesController()
+        public MessagesController(IMessageService messageService)
         {
-            //do something on startup
-            _messages = new List<Message> {
-                new Message {
-                Id = 0,
-                UserName = "Saira C",
-                MessageBody = "Oh hi there"
-                },
-                new Message {
-                    Id = 1,
-                    UserName = "Saira C",
-                    MessageBody = "How are you"
-                },
-                new Message {
-                    Id = 2,
-                    UserName = "Saira C",
-                    MessageBody = "Hope all is well"
-                },
-             };
-
-
-            _messages.Add( new Message { Id = 3, MessageBody = "added in controller", UserName =  "bob"} );
-
+            _messageService = messageService;
         }
 
         //Get all messages : GET api/messages
         [HttpGet]
         public ActionResult<IEnumerable<Message>> Get()
         {
-            return _messages;
-        }
-
- 
-        [HttpGet( "{id}" )]
-        public ActionResult<Message> Get( int id )
-        {
-            //go through the _messages
-            //select meatching message with id
-
-            var matchingMessage = _messages.FirstOrDefault( message => id == message.Id );
-
-            return matchingMessage;
-
+            return _messageService.GetAll();
         }
 
         // POST api/values
         [HttpPost]
         public ActionResult<Message> Post( [FromBody] Message message )
-          //public ActionResult<IEnumerable<Message>> Post( [FromBody] Message message )
         {
-            var incomingUserName = message.UserName;
-
-           _messages.Add( new Message { Id = 4, MessageBody = "added in controller", UserName = incomingUserName } );
-
-           return new Message { Id = 4, UserName = incomingUserName, MessageBody = "created using postman" };
-
-          // _messages.Add( new Message { Id = 4, UserName = incomingUserName, MessageBody = "this is default from Post endpoint" } );
-  
-          //return _messages;
-
+           return _messageService.Create(message.UserName);
         }
 
     }
