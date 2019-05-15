@@ -14,7 +14,7 @@ namespace ChatApp.Controllers
     {
         private IMessageService _messageService;
 
-        public MessagesController(IMessageService messageService)
+        public MessagesController( IMessageService messageService )
         {
             _messageService = messageService;
         }
@@ -26,12 +26,29 @@ namespace ChatApp.Controllers
             return _messageService.GetAll();
         }
 
-        // POST api/values
+        // POST api/message
         [HttpPost]
         public ActionResult<Message> Post( [FromBody] Message message )
         {
-           return _messageService.Create(message.UserName);
+            return _messageService.Create( message.UserName, message.MessageBody );
         }
+
+        //Get all Users
+        public ActionResult<IEnumerable<Message>> GetUser( [FromBody] Message message )
+        {
+            return _messageService.GetUsers( message.UserName );
+        }
+
+        //Create a User
+
+        //get single user
+        [HttpGet("{id}")]
+        public ActionResult<Message> Get (int id)
+        {
+            return _messageService.Get(id);
+        }
+
+
 
     }
 }
