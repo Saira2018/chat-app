@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using ChatApp.Models;
 using ChatApp.Services;
@@ -26,29 +23,12 @@ namespace ChatApp.Controllers
             return _messageService.GetAll();
         }
 
-        // POST api/message
+        // Create a chat message : POST api/message
         [HttpPost]
         public ActionResult<Message> Post( [FromBody] Message message )
         {
-            return _messageService.Create( message.UserName, message.MessageBody );
+            return _messageService.CreateMessage( message.UserName, message.MessageBody );
         }
-
-        //Get all Users
-        public ActionResult<IEnumerable<Message>> GetUser( [FromBody] Message message )
-        {
-            return _messageService.GetUsers( message.UserName );
-        }
-
-        //Create a User
-
-        //get single user
-        [HttpGet("{id}")]
-        public ActionResult<Message> Get (int id)
-        {
-            return _messageService.Get(id);
-        }
-
-
 
     }
 }

@@ -1,8 +1,6 @@
 ﻿using ChatApp.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ChatApp.Services
 {
@@ -10,8 +8,6 @@ namespace ChatApp.Services
     {
         List<Message> GetAll();
         Message CreateMessage( string username, string messageContent );
-        Message CreateUser( string newusername );
-        List<Message> GetUsers( string username );
         Message Get( int id );
     }
 
@@ -54,25 +50,11 @@ namespace ChatApp.Services
             return matchingMessage;
         }
 
-        public List<Message> GetUsers(string username)
-        {
 
-            //loop through an existing list of objects
-            //extract the username property
-            //store property values into a list of values
-            //return that list 
-
-            return _messages;
-        }
-
-
-        //make this so that you can pass body context into this method from the end point
-     
         public Message CreateMessage(string username, string messageContent)
         {
             var newMessage = new Message {
                 Id = ++count,
-                //MessageBody = "added in controller",
                 MessageBody = messageContent,
                 UserName = username
             };
@@ -80,15 +62,6 @@ namespace ChatApp.Services
             _messages.Add(newMessage);
 
             return newMessage;
-        }
-
-        public Message CreateUser (string newusername )
-        {
-            var newUser = new Message {
-                UserName = newusername
-            };
-
-            return newUser;
         }
 
     }

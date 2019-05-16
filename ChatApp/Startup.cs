@@ -29,6 +29,7 @@ namespace ChatApp
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IMessageService, MessageService>();
+            services.AddSingleton<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
